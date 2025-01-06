@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Transcription and Summarization</title>
+</head>
+<body>
+    <h1>Transcribe and Summarize YouTube Video</h1>
+    
+    <form method="POST" action="/transcribe">
+        <label for="youtube_url">Enter YouTube URL:</label>
+        <input type="text" id="youtube_url" name="youtube_url" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if summary %}
+        <h2>Summary:</h2>
+        <p>{{ summary }}</p>
+    {% else %}
+        <p>No summary available yet. Please provide a YouTube URL above.</p>
+    {% endif %}
+</body>
+</html>
